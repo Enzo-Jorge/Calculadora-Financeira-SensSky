@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SensSky - Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0px;">
+    <div class="header">
+        <img src="./Logo Preta SENSSKY.png" alt="Logo da SensSky" style="margin-bottom: 20px;">
+        <h1 style="margin-top: 50px;">Calculadora Financeira</h1>
+    </div>
+    <div class="campos">
+        Custo anual da manutenção dos motores (Em milhões): <br>
+        <input type="number" id="inpmanu" placeholder="Valor em Reais aqui"> <br>
+        Valor gerado anualmente com os ciclos das aeronaves (em milhões de reais): <br>
+        <input type="number" id="inpcican" placeholder="Valor em Reais aqui"> <br>
+        Quantidade de ciclos, em média, executados por cada aeronave anualmente: <br>
+        <input type="number" id="inpcicex" placeholder="A quantidade aqui"> <br>
+        Quantidade de motores que receberão a instalação do sensor: <br>
+        <input type="number" id="inpmot" placeholder="A quantidade aqui"> <br>
+        <button onclick="calc()">Calcular o lucro</button>
+        <div id="mensagem"></div>
+    </div>
+</body>
+</html>
+<script>
+    function calc() {
+    var manutencao = Number(inpmanu.value)*1000000
+    var cicanual = Number(inpcican.value)*1000000
+    var cicexec = Number(inpcicex.value)
+    var motor = Number(inpmot.value)
+    var vlrinst = motor*15000
+    
+    if(manutencao<=0||cicanual<=0||cicexec<=0||motor<=0) {
+        mensagem.innerHTML = `<font color = "red"> <b><i>Você precisa inserir valores válidos nos campos acima.</i></b>`
+    } else {
+        var manutencaored = manutencao-(manutencao*0.22)
+        var manutencaoluc = manutencao-manutencaored
+        var cicluc = cicanual-1*1
+        var vlrcic = cicanual/cicexec
+        var vlrcicsens = cicluc/cicexec
+        var vlrcicano = vlrcicsens*cicexec
+        var vlrinstbrl = vlrinst.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var manutencaobrl = manutencao.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var manutencaolucbrl = manutencaoluc.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var ciclucbrl = cicluc.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var vlrcicbrl = vlrcic.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var vlrcicsensbrl = vlrcicsens.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var vlrcicanobrl = vlrcicano.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+
+        mensagem.innerHTML = `O valor com a manutenção normalmente é de <font color = "red"> R$${manutencaobrl} <br>
+        com os sensores, a manutenção se torna <font color = "green"> R$${manutencaolucbrl} <br>
+        Com nossos sensores, o valor gerado anualmente com o ciclo das aeronaves se torna de <font color = "green"> R$${vlrcicanobrl} <br>
+        A instalação dos sensores nos motores custará apenas <font color = "green"> R$${vlrisntbrl}`
+    }
+}
+</script>

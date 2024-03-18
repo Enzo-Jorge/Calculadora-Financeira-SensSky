@@ -1,0 +1,50 @@
+.header {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 132px;
+    display: flex;
+    box-shadow: 1px 1px 20px 1px rgb(213, 213, 213)
+}
+
+img {
+    height: 150px;
+}
+
+.header-title {
+    font-family: monospace;
+    margin-top: 50px;
+}
+
+.campos {
+    margin-left: 100px; 
+    margin-top: 30px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    background-color: #F3F3F3;
+    border: 1px solid #D0CFCF;
+    width: 276px;
+    height: 35px;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+.campos input::placeholder {
+    text-align: center;
+    font-style: italic;
+    color: #CACACA;
+}
+
+button {
+    color: #FFFFFF;
+    background-color: #5EBBFF;
+    border: 1px solid #47a3e6;
+    width: 280px;
+    height: 40px;
+    border-radius: 6px;
+    font-weight: bold;
+    font: monospace;
+}
