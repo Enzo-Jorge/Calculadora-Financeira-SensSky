@@ -42,18 +42,18 @@
         var vlrcic = cicanual/cicexec
         var vlrcicsens = cicluc/cicexec
         var vlrcicano = vlrcicsens*cicexec
-        var vlrinstbrl = vlrinst.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
-        var manutencaobrl = manutencao.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
-        var manutencaolucbrl = manutencaoluc.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
-        var ciclucbrl = cicluc.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
-        var vlrcicbrl = vlrcic.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
-        var vlrcicsensbrl = vlrcicsens.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
-        var vlrcicanobrl = vlrcicano.toLocaleString("ptbr", {style:"currency", currency: "BRL"})
+        var vlrinstbrl = vlrinst.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
+        var manutencaobrl = manutencao.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
+        var manutencaolucbrl = manutencaoluc.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
+        var ciclucbrl = cicluc.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
+        var vlrcicbrl = vlrcic.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
+        var vlrcicsensbrl = vlrcicsens.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
+        var vlrcicanobrl = vlrcicano.toLocaleString("pt-br", {style:"currency", currency: "BRL"})
 
-        mensagem.innerHTML = `O valor com a manutenção normalmente é de <font color = "red"> R$${manutencaobrl} <br>
-        com os sensores, a manutenção se torna <font color = "green"> R$${manutencaolucbrl} <br>
-        Com nossos sensores, o valor gerado anualmente com o ciclo das aeronaves se torna de <font color = "green"> R$${vlrcicanobrl} <br>
-        A instalação dos sensores nos motores custará apenas <font color = "green"> R$${vlrisntbrl}`
+        mensagem.innerHTML = `O valor com a manutenção normalmente é de: <font color = "red"> ${manutencaobrl} <br>
+            <font color = "white"> com os sensores, a manutenção se torna: <font color = "green"> ${manutencaolucbrl} <br>
+            <font color = "white"> Com nossos sensores, o valor gerado anualmente com o ciclo das aeronaves se torna de: <font color = "green"> ${vlrcicanobrl} <br>
+            <font color = "white"> A instalação dos sensores nos motores custará apenas: <font color = "green"> ${vlrinstbrl}`
     }
 }
 </script>
